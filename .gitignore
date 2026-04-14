@@ -1,0 +1,43 @@
+# =============================================================================
+# Talovi — Drupal 11 .gitignore
+# =============================================================================
+
+# Drupal core (managed by Composer)
+web/core/
+
+# PHP dependencies (managed by Composer)
+vendor/
+
+# User-uploaded files and generated assets
+web/sites/default/files/
+web/sites/default/files/css/
+web/sites/default/files/js/
+web/sites/default/files/php/
+
+# Environment-specific config (never commit secrets)
+web/sites/default/settings.php
+web/sites/default/services.yml
+
+# DDEV local dev environment
+.ddev/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Node / build tools
+node_modules/
+
+# Editor cruft
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# =============================================================================
+# Explicitly tracked (do NOT add these above):
+#   web/themes/custom/    — Talovi theme
+#   web/modules/custom/   — custom modules
+#   composer.json         — dependency manifest
+#   composer.lock         — locked dependency tree
+# =============================================================================
