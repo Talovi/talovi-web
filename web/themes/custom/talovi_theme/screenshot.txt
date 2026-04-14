@@ -1,0 +1,4 @@
+Place a screenshot.png (1200x900px or similar) here to display a theme preview
+in the Drupal admin UI under Appearance.
+
+Recommended: Take a full-page screenshot of the homepage once the theme is active.

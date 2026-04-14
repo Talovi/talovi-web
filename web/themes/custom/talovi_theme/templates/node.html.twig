@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+<article{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer class="node-meta">
+      {{ author_picture }}
+      <div class="node-meta-info">
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node-content') }}>
+    {{ content }}
+  </div>
+
+</article>

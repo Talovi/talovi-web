@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Talovi Theme.
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function talovi_theme_preprocess_html(&$variables) {
+  // Add a dark theme class to the body.
+  $variables['attributes']['class'][] = 'talovi-dark';
+
+  // Add theme version as a data attribute.
+  $variables['attributes']['data-theme-version'] = '1.0.0';
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function talovi_theme_preprocess_page(&$variables) {
+  $config = \Drupal::config('system.site');
+
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+  $variables['theme_version'] = '1.0.0';
+}

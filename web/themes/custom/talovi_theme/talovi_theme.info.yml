@@ -1,0 +1,17 @@
+name: Talovi Theme
+type: theme
+base theme: stable9
+description: Official theme for talovi.dev — dark, developer-focused UI.
+core_version_requirement: ^11
+package: Custom
+
+regions:
+  header: Header
+  primary_menu: Primary Menu
+  hero: Hero
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+
+libraries:
+  - talovi_theme/global

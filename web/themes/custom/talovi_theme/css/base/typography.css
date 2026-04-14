@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Talovi Theme — Typography
+   ========================================================================== */
+
+/* Headings — Playfair Display */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #e6edf3;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+}
+
+/* Sub-headings — Inter */
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: #e6edf3;
+}
+
+/* Body copy */
+p {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #8b949e;
+}
+
+/* Links */
+a {
+  color: #534AB7;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #7F77DD;
+}
+
+/* Inline code */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+}
+
+/* Code blocks */
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+pre code {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Bold */
+strong {
+  font-weight: 600;
+  color: #e6edf3;
+}

@@ -1,0 +1,24 @@
+global:
+  version: 1.0.0
+  css:
+    base:
+      css/base/reset.css: {}
+      css/base/typography.css: {}
+    layout:
+      css/layout/layout.css: {}
+    component:
+      css/components/header.css: {}
+      css/components/hero.css: {}
+      css/components/navigation.css: {}
+      css/components/footer.css: {}
+      css/components/buttons.css: {}
+  js:
+    js/talovi.js: {}
+  dependencies:
+    - core/drupal
+
+fonts:
+  version: 1.x
+  css:
+    base:
+      https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap: { type: external, minified: true }

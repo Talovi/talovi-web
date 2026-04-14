@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * @see template_preprocess_page()
+ */
+#}
+<div class="layout-container">
+
+  <header class="talovi-header" role="banner">
+    <a class="talovi-logo" href="{{ path('<front>') }}" rel="home">
+      <svg class="talovi-logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" fill="#534AB7"/>
+        <rect x="10" y="10" width="12" height="2.5" rx="1.25" fill="#ffffff"/>
+        <rect x="14.75" y="12.5" width="2.5" height="8" rx="1.25" fill="#ffffff"/>
+      </svg>
+      <span class="talovi-logo-text">Talovi</span>
+    </a>
+
+    <nav class="talovi-nav" role="navigation" aria-label="{{ 'Main navigation'|t }}">
+      <ul>
+        <li><a href="/">{{ 'Home'|t }}</a></li>
+        <li><a href="/docs/getting-started">{{ 'Docs'|t }}</a></li>
+        <li><a href="/blog">{{ 'Blog'|t }}</a></li>
+        <li><a href="https://github.com/Talovi/talovi" target="_blank" rel="noopener noreferrer">{{ 'GitHub'|t }}</a></li>
+        <li><a href="/getting-started" class="btn-nav-primary">{{ 'Get started'|t }}</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" aria-label="{{ 'Toggle menu'|t }}" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+  </header>
+
+  <section class="talovi-hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>{{ 'AI for everyone.'|t }}</h1>
+      <p>{{ 'Open source framework powering small businesses and disadvantaged developers worldwide.'|t }}</p>
+      <div class="hero-ctas">
+        <a href="/docs/getting-started" class="btn-primary">{{ 'Get started'|t }}</a>
+        <a href="https://github.com/Talovi/talovi" class="btn-outline" target="_blank" rel="noopener noreferrer">{{ 'View on GitHub'|t }}</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content" class="main-content" role="main">
+    <div class="container">
+      <div class="layout-content{% if page.sidebar %} has-sidebar{% endif %}">
+        <div class="content-area">
+          {{ page.content }}
+        </div>
+        {% if page.sidebar %}
+          <aside class="layout-sidebar" role="complementary">
+            {{ page.sidebar }}
+          </aside>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      {% if page.footer %}
+        {{ page.footer }}
+      {% else %}
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4 class="footer-heading">{{ 'About Talovi'|t }}</h4>
+            <p class="footer-text">{{ 'Open source AI framework built for developers who believe technology should be accessible to everyone.'|t }}</p>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">{{ 'Links'|t }}</h4>
+            <ul class="footer-links">
+              <li><a href="/docs">{{ 'Documentation'|t }}</a></li>
+              <li><a href="/community">{{ 'Community'|t }}</a></li>
+              <li><a href="https://github.com/Talovi/talovi" target="_blank" rel="noopener noreferrer">{{ 'GitHub'|t }}</a></li>
+              <li><a href="/license">{{ 'License'|t }}</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">{{ 'By ITLasso'|t }}</h4>
+            <p class="footer-text">{{ 'Built and maintained by ITLasso. Empowering communities through open technology.'|t }}</p>
+            <a href="https://itlasso.com" class="footer-link-external" target="_blank" rel="noopener noreferrer">itlasso.com</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">{{ 'Talovi — MIT License — by ITLasso'|t }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </footer>
+
+</div>{# /.layout-container #}

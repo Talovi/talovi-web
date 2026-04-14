@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Talovi Theme — Footer
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding-block: 3rem 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ============================================================
+   Footer Grid — 3 columns
+   ============================================================ */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-heading {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.footer-text {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+/* Footer navigation links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links li a {
+  font-size: 0.9375rem;
+  color: var(--color-muted);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.footer-link-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.9375rem;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-link-external:hover {
+  color: var(--color-secondary-hover);
+  text-decoration: none;
+}
+
+/* ============================================================
+   Footer Bottom — copyright bar
+   ============================================================ */
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-bottom {
+    justify-content: space-between;
+  }
+}

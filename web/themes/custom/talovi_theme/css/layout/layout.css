@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Talovi Theme — Layout
+   ========================================================================== */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Layout container */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content grows to fill space */
+.main-content {
+  flex: 1;
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 4rem;
+}
+
+/* Drupal toolbar overrides — prevent admin bar from adding unwanted padding */
+body.toolbar-fixed {
+  padding-top: 0 !important;
+}
+
+body.toolbar-fixed .talovi-hero,
+body.toolbar-tray-open .talovi-hero {
+  margin-top: 0;
+}
+
+/* Content + sidebar grid */
+.layout-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.layout-content.has-sidebar {
+  grid-template-columns: 1fr;
+}
+
+.content-area {
+  min-width: 0;
+}
+
+.layout-sidebar {
+  min-width: 0;
+}
+
+/* Section spacing */
+section {
+  position: relative;
+}
+
+/* Generic section padding */
+.section {
+  padding-block: 5rem;
+}
+
+.section--sm {
+  padding-block: 3rem;
+}
+
+.section--lg {
+  padding-block: 7rem;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet — 768px */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 2rem;
+  }
+
+  .layout-content.has-sidebar {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .main-content {
+    padding-top: calc(var(--header-height) + 4rem);
+  }
+}
+
+/* Desktop — 1024px */
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2.5rem;
+  }
+
+  .layout-content.has-sidebar {
+    grid-template-columns: 1fr 320px;
+  }
+}

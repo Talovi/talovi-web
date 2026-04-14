@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Talovi Theme — Hero
+   ========================================================================== */
+
+.talovi-hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 64px;
+  text-align: center;
+  /* No overflow: hidden — it clips the glow and can hide content */
+}
+
+/* Toolbar-aware padding — header shifts down when admin toolbar is present */
+body.toolbar-fixed .talovi-hero {
+  padding-top: 103px; /* 39px toolbar + 64px header */
+}
+
+body.toolbar-fixed.toolbar-tray-open .talovi-hero {
+  padding-top: 143px; /* 79px toolbar+tray + 64px header */
+}
+
+/* Purple glow */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle,
+    rgba(83, 74, 183, 0.15) 0%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Teal secondary glow */
+.talovi-hero::before {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 400px;
+  height: 300px;
+  background: radial-gradient(ellipse at center,
+    rgba(93, 202, 165, 0.07) 0%,
+    transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content wrapper — sits above glows */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+/* Heading */
+.hero-inner h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #e6edf3 !important;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+
+/* Subheading */
+.hero-inner p {
+  font-size: 1.25rem;
+  color: #8b949e !important;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+/* CTA row */
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .talovi-hero {
+    padding-top: 80px;
+  }
+
+  .hero-inner h1 {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+  }
+
+  .hero-inner p {
+    font-size: 1rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 280px;
+    margin-inline: auto;
+  }
+
+  .hero-glow {
+    width: 360px;
+    height: 360px;
+  }
+}
