@@ -1,43 +1,44 @@
-# =============================================================================
-# Talovi — Drupal 11 .gitignore
-# =============================================================================
-
-# Drupal core (managed by Composer)
-web/core/
-
-# PHP dependencies (managed by Composer)
+# Drupal core and dependencies
 vendor/
+web/core/
+web/modules/contrib/
+web/themes/contrib/
+web/profiles/contrib/
 
-# User-uploaded files and generated assets
+# Drupal generated files
 web/sites/default/files/
-web/sites/default/files/css/
-web/sites/default/files/js/
-web/sites/default/files/php/
-
-# Environment-specific config (never commit secrets)
 web/sites/default/settings.php
 web/sites/default/services.yml
 
-# DDEV local dev environment
+# Drupal scaffold files
+web/autoload.php
+web/index.php
+web/update.php
+web/robots.txt
+web/.htaccess
+web/INSTALL.txt
+web/README.md
+web/.csslintrc
+web/.eslintignore
+web/.eslintrc.json
+web/.ht.router.php
+web/example.gitignore
+web/.editorconfig
+web/.gitattributes
+
+# DDEV
 .ddev/
 
-# OS artifacts
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
 Thumbs.db
 
-# Node / build tools
+# Node
 node_modules/
 
-# Editor cruft
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# =============================================================================
-# Explicitly tracked (do NOT add these above):
-#   web/themes/custom/    — Talovi theme
-#   web/modules/custom/   — custom modules
-#   composer.json         — dependency manifest
-#   composer.lock         — locked dependency tree
-# =============================================================================
+# Recipes
+recipes/
