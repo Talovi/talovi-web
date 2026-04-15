@@ -176,18 +176,18 @@ nav.talovi-nav ul li a.btn-nav-primary:hover {
 
 .page-title-bar {
   /* top padding must clear the fixed 64px header */
-  padding: calc(var(--header-height, 64px) + 2.5rem) 2rem 2rem;
+  padding: calc(var(--header-height, 64px) + 1rem) 2rem 1.5rem;
   border-bottom: 1px solid #30363d;
   background: #0d1117;
 }
 
 /* Shift down further when the Drupal admin toolbar is present */
 body.toolbar-fixed .page-title-bar {
-  padding-top: calc(39px + var(--header-height, 64px) + 2.5rem);
+  padding-top: calc(39px + var(--header-height, 64px) + 1rem);
 }
 
 body.toolbar-fixed.toolbar-tray-open .page-title-bar {
-  padding-top: calc(79px + var(--header-height, 64px) + 2.5rem);
+  padding-top: calc(79px + var(--header-height, 64px) + 1rem);
 }
 
 .page-title-bar .container {

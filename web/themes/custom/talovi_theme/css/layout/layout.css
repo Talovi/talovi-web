@@ -24,6 +24,12 @@
   padding-bottom: 4rem;
 }
 
+/* Interior page main — title bar handles the top offset, just add breathing room */
+.main-content main,
+#main-content main {
+  padding-top: 2rem;
+}
+
 /* Front page — no extra top padding, hero handles spacing */
 .path-frontpage .main-content {
   padding-top: 0;
