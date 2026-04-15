@@ -47,12 +47,6 @@
   padding-top: 0;
 }
 
-/* Interior pages — constrain and center content */
-.main-content main {
-  padding: 3rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 /* Drupal toolbar overrides — prevent admin bar from adding unwanted padding */
 body.toolbar-fixed {
@@ -346,7 +340,7 @@ section {
 main .container {
   max-width: 860px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 0;
 }
 
 main h2 {
