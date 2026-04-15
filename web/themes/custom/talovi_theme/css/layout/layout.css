@@ -94,26 +94,51 @@ section {
 
 .audience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .audience-card {
   background: #161b22;
-  border: 0.5px solid #30363d;
-  border-radius: 12px;
+  border: 1px solid #30363d;
+  border-radius: 16px;
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.audience-card:first-child {
+  border-color: #534AB7;
+}
+
+.audience-card:last-child {
+  border-color: #5DCAA5;
 }
 
 .audience-label {
-  font-size: 0.75rem;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: #534AB7;
-  margin-bottom: 1rem;
+  background: rgba(83, 74, 183, 0.1);
+  padding: 4px 10px;
+  border-radius: 99px;
+  margin-bottom: 1.25rem;
+}
+
+.audience-card:last-child .audience-label {
+  color: #5DCAA5;
+  background: rgba(93, 202, 165, 0.1);
 }
 
 .audience-card h2 {
@@ -137,24 +162,31 @@ section {
   list-style: none;
   padding: 0;
   margin: 0 0 2rem;
+  flex: 1;
 }
 
 .benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 0.5px solid #21262d;
   color: #8b949e;
-  font-size: 0.9rem;
-  padding: 0.4rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-  margin-bottom: 0.75rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .benefit-list li::before {
   content: '✓';
-  position: absolute;
-  left: 0;
   color: #5DCAA5;
-  font-weight: 500;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.benefit-list li:last-child {
+  border-bottom: none;
 }
 
 /* ============================================================
