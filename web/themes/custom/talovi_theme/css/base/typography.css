@@ -11,6 +11,11 @@ h1, h2, h3 {
   color: #e6edf3;
 }
 
+h1, h2, h3, h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 h1 {
   font-size: clamp(3.5rem, 9vw, 7rem);
   font-weight: 900;
@@ -20,11 +25,15 @@ h1 {
 h2 {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 /* Sub-headings — Inter */
@@ -38,7 +47,24 @@ h4, h5, h6 {
 p {
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  line-height: 1.75;
+  line-height: 1.8;
+  color: #8b949e;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+ul li, ol li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
   color: #8b949e;
 }
 
