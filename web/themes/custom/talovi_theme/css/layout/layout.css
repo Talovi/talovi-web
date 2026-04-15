@@ -24,10 +24,17 @@
   padding-bottom: 4rem;
 }
 
-/* Interior page main — title bar handles the top offset, just add breathing room */
+/* Interior page main — title bar handles the top offset */
 .main-content main,
 #main-content main {
-  padding-top: 2rem;
+  padding: 2rem 2rem 4rem;
+}
+
+.main-content main .container,
+#main-content main .container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* Front page — no extra top padding, hero handles spacing */
