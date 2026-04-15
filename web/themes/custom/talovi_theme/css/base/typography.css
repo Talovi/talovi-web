@@ -114,3 +114,30 @@ strong {
   font-weight: 600;
   color: #e6edf3;
 }
+
+/* ============================================================
+   Body content heading overrides
+   Scope to node/field wrappers so Playfair Display headings
+   in the global typography don't bleed into body copy areas.
+   ============================================================ */
+
+.node__content h2,
+.field--name-body h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: #e6edf3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0;
+}
+
+.node__content h3,
+.field--name-body h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: #8b949e;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}

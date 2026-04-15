@@ -135,25 +135,19 @@
   {% endif %}
 
   {% if not is_front %}
-  <div class="page-header">
+  <div class="page-title-bar">
     <div class="container">
-      {{ page.page_title }}
-      <h1 class="page-title">{{ node.label }}</h1>
+      {% if node %}
+        <h1 class="page-title">{{ node.label }}</h1>
+      {% elseif page.page_title %}
+        {{ page.page_title }}
+      {% endif %}
     </div>
   </div>
 
   <main id="main-content" class="main-content" role="main">
     <div class="container">
-      <div class="layout-content{% if page.sidebar %} has-sidebar{% endif %}">
-        <div class="content-area">
-          {{ page.content }}
-        </div>
-        {% if page.sidebar %}
-          <aside class="layout-sidebar" role="complementary">
-            {{ page.sidebar }}
-          </aside>
-        {% endif %}
-      </div>
+      {{ page.content }}
     </div>
   </main>
   {% endif %}
