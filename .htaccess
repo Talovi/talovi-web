@@ -1,0 +1,17 @@
+# Entry point for talovi.dev on Chemicloud shared hosting.
+# Document root is public_html/ but Drupal lives in public_html/web/.
+#
+# Two-path routing:
+#   1. Static files that exist in web/ are served directly (CSS, JS, images).
+#   2. Everything else goes through drupal-wrapper.php which corrects
+#      SCRIPT_NAME before Drupal boots (prevents the /web base-path bug).
+
+RewriteEngine On
+
+# Serve real static files from web/ without going through PHP.
+# %{REQUEST_URI} is path-only (no query string) in LiteSpeed/Apache rewrite.
+RewriteCond /home/talovi/public_html/web%{REQUEST_URI} -f
+RewriteRule ^(.*)$ web/$1 [L,QSA]
+
+# All other requests (clean URLs, admin, user paths) → wrapper.
+RewriteRule ^(.*)$ drupal-wrapper.php [L,QSA]
