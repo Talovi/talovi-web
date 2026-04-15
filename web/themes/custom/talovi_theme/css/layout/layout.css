@@ -24,6 +24,11 @@
   padding-bottom: 4rem;
 }
 
+/* Interior pages — page-title-bar handles the header offset, no extra top gap */
+#main-content.main-content {
+  padding-top: 0 !important;
+}
+
 /* Interior page main — title bar handles the top offset */
 .main-content main,
 #main-content main {
