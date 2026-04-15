@@ -20,7 +20,7 @@
 /* Main content grows to fill space */
 .main-content {
   flex: 1;
-  padding-top: calc(var(--header-height) + 3rem);
+  padding-top: calc(var(--header-height) + 1rem);
   padding-bottom: 4rem;
 }
 
@@ -410,7 +410,7 @@ main pre code {
   }
 
   .main-content {
-    padding-top: calc(var(--header-height) + 4rem);
+    padding-top: calc(var(--header-height) + 1rem);
   }
 }
 
