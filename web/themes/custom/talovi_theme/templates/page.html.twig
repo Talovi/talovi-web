@@ -48,6 +48,55 @@
       </div>
     </div>
   </section>
+
+
+  {% if is_front %}
+  <section class="home-features">
+    <div class="container">
+      <h2>{{ 'Built for the people who need it most'|t }}</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>{{ 'Model-agnostic'|t }}</h3>
+          <p>{{ 'Works with Claude, Gemini, Grok, and Ollama. Switch providers in one line of config.'|t }}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>{{ 'Domain agents'|t }}</h3>
+          <p>{{ 'Built-in agents for Healthcare, Legal, Real Estate, Retail, and General business needs.'|t }}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔑</div>
+          <h3>{{ 'Bring your own key'|t }}</h3>
+          <p>{{ 'Zero vendor lock-in. Use your own API key. Your data stays yours.'|t }}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>{{ 'Open source'|t }}</h3>
+          <p>{{ 'MIT licensed. Free to use, modify, and deploy commercially. Forever.'|t }}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>{{ 'Three model tiers'|t }}</h3>
+          <p>{{ 'lite, standard, and pro tiers let you match cost to complexity across any provider.'|t }}</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏘️</div>
+          <h3>{{ 'Community driven'|t }}</h3>
+          <p>{{ 'Built by developers, for developers. Contributions welcome from anyone.'|t }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-cta">
+    <div class="container">
+      <h2>{{ 'Ready to build?'|t }}</h2>
+      <p>{{ 'Get started in under 30 minutes with your own API key.'|t }}</p>
+      <pre><code>npm install talovi</code></pre>
+      <a href="/docs" class="btn-primary">{{ 'Read the docs'|t }}</a>
+    </div>
+  </section>
   {% endif %}
 
   {% if not is_front %}
@@ -59,6 +108,7 @@
   </div>
   {% endif %}
 
+  {% if not is_front %}
   <main id="main-content" class="main-content" role="main">
     <div class="container">
       <div class="layout-content{% if page.sidebar %} has-sidebar{% endif %}">
@@ -73,6 +123,7 @@
       </div>
     </div>
   </main>
+  {% endif %}
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
@@ -89,8 +140,9 @@
             <ul class="footer-links">
               <li><a href="/docs">{{ 'Documentation'|t }}</a></li>
               <li><a href="/community">{{ 'Community'|t }}</a></li>
-              <li><a href="https://github.com/Talovi/talovi" target="_blank" rel="noopener noreferrer">{{ 'GitHub'|t }}</a></li>
+              <li><a href="/blog">{{ 'Blog'|t }}</a></li>
               <li><a href="/license">{{ 'License'|t }}</a></li>
+              <li><a href="https://github.com/Talovi/talovi" target="_blank" rel="noopener noreferrer">{{ 'GitHub'|t }}</a></li>
             </ul>
           </div>
           <div class="footer-col">
