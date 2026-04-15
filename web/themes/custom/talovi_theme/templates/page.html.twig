@@ -25,7 +25,7 @@
         <li><a href="/blog">{{ 'Blog'|t }}</a></li>
         <li><a href="/about">{{ 'About'|t }}</a></li>
         <li><a href="https://github.com/Talovi/talovi" target="_blank" rel="noopener noreferrer">{{ 'GitHub'|t }}</a></li>
-        <li><a href="/docs" class="btn-nav-primary">{{ 'Get started'|t }}</a></li>
+        <li><a href="/getting-started" class="btn-nav-primary">{{ 'Get started'|t }}</a></li>
       </ul>
     </nav>
 
@@ -49,50 +49,87 @@
     </div>
   </section>
 
-  <section class="home-features">
+  <section class="home-audience">
     <div class="container">
-      <h2>{{ 'Built for the people who need it most'|t }}</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>{{ 'Model-agnostic'|t }}</h3>
-          <p>{{ 'Works with Claude, Gemini, Grok, and Ollama. Switch providers in one line of config.'|t }}</p>
+      <div class="audience-grid">
+
+        <div class="audience-card">
+          <div class="audience-label">{{ 'For small businesses'|t }}</div>
+          <h2>{{ 'Add AI to your business — no technical knowledge needed'|t }}</h2>
+          <p>{{ 'Talovi gives your website an intelligent assistant that understands your industry. Whether you run a medical practice, law office, real estate agency, or retail store — Talovi speaks your language.'|t }}</p>
+          <ul class="benefit-list">
+            <li>{{ 'Answer customer questions 24/7'|t }}</li>
+            <li>{{ 'Handle appointment requests and inquiries'|t }}</li>
+            <li>{{ 'Guide visitors to the right service'|t }}</li>
+            <li>{{ 'Works on any website'|t }}</li>
+          </ul>
+          <a href="/demo" class="btn-primary">{{ 'Try a live demo'|t }}</a>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>{{ 'Domain agents'|t }}</h3>
-          <p>{{ 'Built-in agents for Healthcare, Legal, Real Estate, Retail, and General business needs.'|t }}</p>
+
+        <div class="audience-card">
+          <div class="audience-label">{{ 'For developers'|t }}</div>
+          <h2>{{ 'Build AI-powered apps in minutes — not months'|t }}</h2>
+          <p>{{ 'Talovi is an open source framework that handles the hard parts — provider switching, agent routing, conversation memory, and model tier management. You focus on your product.'|t }}</p>
+          <ul class="benefit-list">
+            <li>{{ 'Works with Claude, Gemini, Grok, and Ollama'|t }}</li>
+            <li>{{ '5 domain agents ready to deploy'|t }}</li>
+            <li>{{ 'Switch AI providers in one line'|t }}</li>
+            <li>{{ 'MIT licensed, free forever'|t }}</li>
+          </ul>
+          <a href="/docs" class="btn-outline">{{ 'Read the docs'|t }}</a>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔑</div>
-          <h3>{{ 'Bring your own key'|t }}</h3>
-          <p>{{ 'Zero vendor lock-in. Use your own API key. Your data stays yours.'|t }}</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="home-how">
+    <div class="container">
+      <h2>{{ 'How Talovi works'|t }}</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>{{ 'Choose your AI provider'|t }}</h3>
+          <p>{{ 'Pick Claude, Gemini, Grok, or run locally with Ollama. Bring your own API key — no middleman, no markup.'|t }}</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌍</div>
-          <h3>{{ 'Open source'|t }}</h3>
-          <p>{{ 'MIT licensed. Free to use, modify, and deploy commercially. Forever.'|t }}</p>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>{{ 'Select your domain'|t }}</h3>
+          <p>{{ 'Healthcare, Legal, Real Estate, Retail, or General. Each agent has deep domain knowledge built in.'|t }}</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚙️</div>
-          <h3>{{ 'Three model tiers'|t }}</h3>
-          <p>{{ 'lite, standard, and pro tiers let you match cost to complexity across any provider.'|t }}</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🏘️</div>
-          <h3>{{ 'Community driven'|t }}</h3>
-          <p>{{ 'Built by developers, for developers. Contributions welcome from anyone.'|t }}</p>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>{{ 'Deploy anywhere'|t }}</h3>
+          <p>{{ 'Embed on your website, integrate into your app, or deploy as a standalone assistant. One script tag or npm install.'|t }}</p>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="home-mission">
+    <div class="container">
+      <blockquote>
+        {{ '"We believe AI should be a level playing field. The corner shop owner, the independent pharmacist, the first-generation developer — they deserve the same tools as Fortune 500 companies."'|t }}
+      </blockquote>
+      <cite>{{ '— ITLasso, Canton Ohio'|t }}</cite>
+    </div>
+  </section>
+
   <section class="home-cta">
     <div class="container">
-      <h2>{{ 'Ready to build?'|t }}</h2>
-      <p>{{ 'Get started in under 30 minutes with your own API key.'|t }}</p>
-      <pre><code>npm install talovi</code></pre>
-      <a href="/docs" class="btn-primary">{{ 'Read the docs'|t }}</a>
+      <div class="cta-grid">
+        <div class="cta-card">
+          <h3>{{ 'Try it now'|t }}</h3>
+          <p>{{ 'See Talovi in action with a live demo — no signup required.'|t }}</p>
+          <a href="/demo" class="btn-primary">{{ 'Launch demo'|t }}</a>
+        </div>
+        <div class="cta-card">
+          <h3>{{ 'Start building'|t }}</h3>
+          <p>{{ 'Install Talovi and deploy your first agent in 30 minutes.'|t }}</p>
+          <pre><code>npm install talovi</code></pre>
+          <a href="/getting-started" class="btn-outline">{{ 'Get started'|t }}</a>
+        </div>
+      </div>
     </div>
   </section>
   {% endif %}
