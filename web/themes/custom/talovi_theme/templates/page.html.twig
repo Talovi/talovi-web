@@ -36,6 +36,7 @@
     </button>
   </header>
 
+  {% if is_front %}
   <section class="talovi-hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
@@ -47,6 +48,16 @@
       </div>
     </div>
   </section>
+  {% endif %}
+
+  {% if not is_front %}
+  <div class="page-header">
+    <div class="container">
+      {{ page.page_title }}
+      <h1 class="page-title">{{ node.label }}</h1>
+    </div>
+  </div>
+  {% endif %}
 
   <main id="main-content" class="main-content" role="main">
     <div class="container">

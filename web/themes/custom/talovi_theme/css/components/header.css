@@ -171,6 +171,24 @@ nav.talovi-nav ul li a.btn-nav-primary:hover {
 }
 
 /* ============================================================
+   Interior page header
+   ============================================================ */
+
+.page-header {
+  padding: 80px 2rem 40px;
+  border-bottom: 1px solid #30363d;
+  background: #0d1117;
+}
+
+.page-header .page-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #e6edf3;
+  margin: 0;
+}
+
+/* ============================================================
    Mobile menu
    ============================================================ */
 

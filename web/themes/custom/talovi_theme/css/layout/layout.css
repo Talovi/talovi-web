@@ -24,6 +24,18 @@
   padding-bottom: 4rem;
 }
 
+/* Front page — no extra top padding, hero handles spacing */
+.path-frontpage .main-content {
+  padding-top: 0;
+}
+
+/* Interior pages — constrain and center content */
+.main-content main {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* Drupal toolbar overrides — prevent admin bar from adding unwanted padding */
 body.toolbar-fixed {
   padding-top: 0 !important;
