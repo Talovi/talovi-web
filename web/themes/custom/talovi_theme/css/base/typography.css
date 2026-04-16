@@ -68,15 +68,15 @@ ul li, ol li {
   color: #8b949e;
 }
 
-/* Links */
+/* Links — #8B82E8 on #0d1117 = ~5.8:1 contrast, passes WCAG AA */
 a {
-  color: #534AB7;
+  color: #8B82E8;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 a:hover {
-  color: #7F77DD;
+  color: #A9A3F0;
 }
 
 /* Inline code */

@@ -191,7 +191,7 @@ body.toolbar-fixed.toolbar-tray-open .page-title-bar {
 }
 
 .page-title-bar .container {
-  max-width: 860px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0;
 }
