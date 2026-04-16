@@ -49,7 +49,7 @@
     '  position:fixed; bottom:24px; right:24px;',
     '  width:56px; height:56px; border-radius:50%;',
     '  background:' + config.color + '; border:none;',
-    '  cursor:pointer; z-index:999999;',
+    '  cursor:pointer; z-index:999998;',
     '  box-shadow:0 4px 12px rgba(0,0,0,.3);',
     '  display:flex; align-items:center; justify-content:center;',
     '  transition:transform .2s, box-shadow .2s;',
@@ -58,12 +58,12 @@
     '#talovi-widget-btn svg { width:24px; height:24px; fill:white; }',
 
     '#talovi-widget-panel {',
-    '  position:fixed; bottom:92px; right:24px;',
+    '  position:fixed; bottom:88px; right:24px;',
     '  width:340px; height:500px;',
     '  background:#0d1117; border-radius:16px;',
     '  border:1px solid #30363d;',
     '  box-shadow:0 8px 32px rgba(0,0,0,.4);',
-    '  z-index:999998; display:none; flex-direction:column; overflow:hidden;',
+    '  z-index:999999; display:none; flex-direction:column; overflow:hidden;',
     '  animation:talovi-slide-up .3s ease;',
     '}',
     '#talovi-widget-panel.open { display:flex; }',
@@ -85,6 +85,7 @@
     '#talovi-widget-messages {',
     '  flex:1; overflow-y:auto; padding:16px;',
     '  display:flex; flex-direction:column; gap:10px;',
+    '  background:#111520;',
     '}',
 
     '.talovi-msg { display:flex; flex-direction:column; }',
@@ -136,7 +137,8 @@
     '#talovi-widget-footer a:hover { color:' + config.color + '; }',
 
     '@media (max-width:400px) {',
-    '  #talovi-widget-panel { width:calc(100vw - 32px); right:16px; bottom:88px; }',
+    '  #talovi-widget-panel { width:calc(100vw - 32px); right:16px; bottom:84px; }',
+    '  #talovi-widget-btn   { right:16px; }',
     '}'
   ].join('\n');
   document.head.appendChild(styles);
