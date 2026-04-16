@@ -9,6 +9,14 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RYBKX6QBT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0RYBKX6QBT');
+    </script>
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title | safe_join(' | ') }}</title>
     <meta charset="UTF-8">
