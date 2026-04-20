@@ -205,3 +205,100 @@
   </footer>
 
 </div>{# /.layout-container #}
+
+{% if is_demo %}
+<script>
+  window.TaloviConfig = {
+    agentId: "YOUR_AGENT_ID",
+    accentColor: "#6C63ff",
+    position: "bottom-right",
+    language: "auto"
+  };
+</script>
+<script src="/sites/default/files/embed.js" async></script>
+
+{#
+  Language switcher for the demo page.
+  Hidden on load; revealed when the user first opens the widget (bubble click)
+  or clicks any element with class "demo-start-btn" / data-demo-start attribute
+  in the node body content.
+  On change it drives the widget's internal #talovi-lang select (no reinit needed).
+#}
+<div id="talovi-demo-lang" style="display:none;position:fixed;bottom:20px;right:84px;z-index:9997;background:#1a1e2a;border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:8px 12px;font-family:system-ui,sans-serif;font-size:.78rem;color:#e6edf3;box-shadow:0 4px 16px rgba(0,0,0,.4);">
+  <label for="talovi-ext-lang" style="display:flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap;">
+    <span>&#127760; Widget Language:</span>
+    <select id="talovi-ext-lang" style="background:#0d1117;border:1px solid rgba(255,255,255,.2);color:#e6edf3;border-radius:6px;padding:3px 8px;font-size:.78rem;cursor:pointer;">
+      <option value="en">English</option>
+      <option value="es">Espa&#241;ol</option>
+      <option value="fr">Fran&#231;ais</option>
+      <option value="pt">Portugu&#234;s</option>
+      <option value="zh">&#20013;&#25991;</option>
+    </select>
+  </label>
+</div>
+
+<script>
+(function () {
+  // Guard: elements must exist (this script is inline and runs after the div above)
+  var controls = document.getElementById('talovi-demo-lang');
+  var extSelect = document.getElementById('talovi-ext-lang');
+  if (!controls || !extSelect) return;
+
+  var shown = false;
+
+  function showControls() {
+    if (!shown) {
+      controls.style.display = 'block';
+      shown = true;
+    }
+  }
+
+  // Attach the one-time click listener to the widget bubble
+  function hookBubble(bubble) {
+    bubble.addEventListener('click', function onFirst() {
+      showControls();
+      bubble.removeEventListener('click', onFirst);
+    });
+  }
+
+  // Try immediately (embed.js may already have run if it was cached)
+  var bubble = document.getElementById('talovi-bubble');
+  if (bubble) {
+    hookBubble(bubble);
+  } else {
+    // Watch for embed.js to inject #talovi-bubble into <body>
+    var observer = new MutationObserver(function (mutations) {
+      for (var i = 0; i < mutations.length; i++) {
+        var added = mutations[i].addedNodes;
+        for (var j = 0; j < added.length; j++) {
+          if (added[j].id === 'talovi-bubble') {
+            observer.disconnect();
+            hookBubble(added[j]);
+            return;
+          }
+        }
+      }
+    });
+    observer.observe(document.body, { childList: true });
+  }
+
+  // Hook: any element with class "demo-start-btn" or data-demo-start in page content
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.demo-start-btn, [data-demo-start]')) {
+      showControls();
+      var b = document.getElementById('talovi-bubble');
+      if (b) b.click();
+    }
+  });
+
+  // Drive the widget's own #talovi-lang select — no widget reinitialization needed
+  extSelect.addEventListener('change', function () {
+    var widgetSel = document.getElementById('talovi-lang');
+    if (widgetSel) {
+      widgetSel.value = this.value;
+      widgetSel.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+})();
+</script>
+{% endif %}
