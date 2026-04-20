@@ -164,14 +164,11 @@
     </div>
   </div>
 
-  {# Suppress node body on the demo page — the widget IS the content. #}
-  {% if not is_demo %}
   <main id="main-content" class="main-content" role="main">
     <div class="container">
       {{ page.content }}
     </div>
   </main>
-  {% endif %}
   {% endif %}
 
   <footer class="site-footer" role="contentinfo">
