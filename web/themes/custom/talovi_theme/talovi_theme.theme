@@ -25,6 +25,12 @@ function talovi_theme_preprocess_page(&$variables) {
   $variables['site_name'] = $config->get('name');
   $variables['site_slogan'] = $config->get('slogan');
   $variables['theme_version'] = '1.0.0';
+
+  // Expose whether the current page is the /demo path so the template
+  // can conditionally inject the Talovi embed widget scripts.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $variables['is_demo'] = (trim($alias, '/') === 'demo');
 }
 
 /**
