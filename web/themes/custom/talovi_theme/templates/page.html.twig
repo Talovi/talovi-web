@@ -249,14 +249,12 @@
       language:    'auto'
     };
 
-    // Inject embed.js — widget initialises when script executes
+    // Show language switcher now — inline chat is visible after Start demo click
+    langCtrl.style.display = 'block';
+
+    // Inject embed.js — floating widget also initialises alongside the inline chat
     var script = document.createElement('script');
     script.src = '/sites/default/files/embed.js';
-    script.onload = function () {
-      langCtrl.style.display = 'block';
-      var bubble = document.getElementById('talovi-bubble');
-      if (bubble) bubble.click();
-    };
     script.onerror = function () {
       launched = false;
       if (triggerBtn) { triggerBtn.disabled = false; }
@@ -271,13 +269,31 @@
     if (btn) launch(btn);
   });
 
-  // External language switcher drives the widget's own #talovi-lang select
+  // Language strings for the inline chat box
+  var greetings = {
+    en: 'Hello! How can I help you today?',
+    es: '\u00a1Hola! \u00bfC\u00f3mo puedo ayudarte hoy?',
+    fr: 'Bonjour\u00a0! Comment puis-je vous aider aujourd\u2019hui\u00a0?',
+    pt: 'Ol\u00e1! Como posso ajud\u00e1-lo hoje?',
+    zh: '\u4f60\u597d\uff01\u4eca\u5929\u6211\u80fd\u5e2e\u4f60\u4ec0\u4e48\uff1f'
+  };
+  var placeholders = {
+    en: 'Ask something\u2026',
+    es: 'Escribe tu mensaje\u2026',
+    fr: '\u00c9crivez votre message\u2026',
+    pt: 'Digite sua mensagem\u2026',
+    zh: '\u8f93\u5165\u6d88\u606f\u2026'
+  };
+
   if (extSel) {
     extSel.addEventListener('change', function () {
-      var widgetSel = document.getElementById('talovi-lang');
-      if (widgetSel) {
-        widgetSel.value = this.value;
-        widgetSel.dispatchEvent(new Event('change', { bubbles: true }));
+      var lang = this.value;
+      var chatInput = document.getElementById('chatInput');
+      var chatMessages = document.getElementById('chatMessages');
+      if (chatInput) chatInput.placeholder = placeholders[lang] || placeholders.en;
+      if (chatMessages) {
+        var firstMsg = chatMessages.querySelector('.chat-msg.assistant');
+        if (firstMsg) firstMsg.textContent = greetings[lang] || greetings.en;
       }
     });
   }
