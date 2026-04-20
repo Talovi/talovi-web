@@ -232,41 +232,18 @@
 
 <script>
 (function () {
-  var langCtrl = document.getElementById('talovi-demo-lang');
-  var extSel   = document.getElementById('talovi-ext-lang');
-  var launched = false;
+  var extSel = document.getElementById('talovi-ext-lang');
 
-  function launch(triggerBtn) {
-    if (launched) return;
-    launched = true;
-    if (triggerBtn) { triggerBtn.disabled = true; }
-
-    // Set config before embed.js IIFE runs
-    window.TaloviConfig = {
-      agentId:     'YOUR_AGENT_ID',
-      accentColor: '#6C63ff',
-      position:    'bottom-right',
-      language:    'auto'
+  // Hook into the node body's startDemo() without touching the node HTML.
+  // We wait for DOMContentLoaded so the node body script has already defined
+  // window.startDemo before we wrap it.
+  document.addEventListener('DOMContentLoaded', function () {
+    var _orig = window.startDemo;
+    window.startDemo = function () {
+      if (_orig) _orig.apply(this, arguments);
+      var langCtrl = document.getElementById('talovi-demo-lang');
+      if (langCtrl) langCtrl.style.display = 'block';
     };
-
-    // Show language switcher now — inline chat is visible after Start demo click
-    langCtrl.style.display = 'block';
-
-    // Inject embed.js — floating widget also initialises alongside the inline chat
-    var script = document.createElement('script');
-    script.src = '/sites/default/files/embed.js';
-    script.onerror = function () {
-      launched = false;
-      if (triggerBtn) { triggerBtn.disabled = false; }
-    };
-    document.body.appendChild(script);
-  }
-
-  // Delegate to any element with class "demo-start-btn" or data-demo-start
-  // in the node body (the actual Start demo button lives there)
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('.demo-start-btn, [data-demo-start]');
-    if (btn) launch(btn);
   });
 
   // Language strings for the inline chat box
