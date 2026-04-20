@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.article
+id: node.article.field_author
+field_name: field_author
+entity_type: node
+bundle: article
+label: 'Author'
+description: 'Display name of the post author. Shown in the byline instead of the Drupal account name.'
+required: true
+translatable: true
+default_value:
+  - value: 'Edgar Powell · IT Lasso'
+default_value_callback: ''
+settings: {}
+field_type: string

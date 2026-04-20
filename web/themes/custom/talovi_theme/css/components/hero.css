@@ -58,12 +58,15 @@ body.toolbar-fixed.toolbar-tray-open .talovi-hero {
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
   padding: 0 2rem;
+  text-align: center;
 }
 
 /* Heading */
-.hero-inner h1 {
+.hero-inner h2 {
   font-family: var(--font-heading);
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
@@ -71,7 +74,6 @@ body.toolbar-fixed.toolbar-tray-open .talovi-hero {
   color: #e6edf3 !important;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  white-space: nowrap;
 }
 
 /* Subheading */
@@ -102,7 +104,7 @@ body.toolbar-fixed.toolbar-tray-open .talovi-hero {
     padding-top: 80px;
   }
 
-  .hero-inner h1 {
+  .hero-inner h2 {
     font-size: clamp(2.25rem, 10vw, 3.5rem);
   }
 

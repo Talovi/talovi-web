@@ -15,7 +15,7 @@
         <rect x="10" y="10" width="12" height="2.5" rx="1.25" fill="#ffffff"/>
         <rect x="14.75" y="12.5" width="2.5" height="8" rx="1.25" fill="#ffffff"/>
       </svg>
-      <span class="talovi-logo-text">Talovi</span>
+      <span class="talovi-logo-text">Talovi<sup style="font-size:0.5em;vertical-align:super;">&#8482;</sup></span>
     </a>
 
     <nav class="talovi-nav" role="navigation" aria-label="{{ 'Main navigation'|t }}">
@@ -23,6 +23,7 @@
         <li><a href="/">{{ 'Home'|t }}</a></li>
         <li><a href="/docs">{{ 'Docs'|t }}</a></li>
         <li><a href="/blog">{{ 'Blog'|t }}</a></li>
+        <li><a href="https://cloud.talovi.dev" class="nav-cloud">{{ 'Cloud'|t }}</a></li>
         <li><a href="/about">{{ 'About'|t }}</a></li>
         <li><a href="https://github.com/Talovi/talovi" target="_blank" rel="noopener noreferrer">{{ 'GitHub'|t }}</a></li>
         <li><a href="/getting-started" class="btn-nav-primary">{{ 'Get started'|t }}</a></li>
@@ -40,11 +41,11 @@
   <section class="talovi-hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      <h1>{{ 'AI for everyone.'|t }}</h1>
-      <p>{{ 'Open source framework powering small businesses and developers with limited resources worldwide.'|t }}</p>
+      <h2>{{ 'AI for everyone. No coding required.'|t }}</h2>
+      <p>{{ 'Talovi gives your business an intelligent AI assistant that understands your industry — whether you\'re a business owner with no technical background, or a developer building something new.'|t }}</p>
       <div class="hero-ctas">
-        <a href="/getting-started" class="btn-primary">{{ 'Get started'|t }}</a>
-        <a href="https://github.com/Talovi/talovi" class="btn-outline" target="_blank" rel="noopener noreferrer">{{ 'View on GitHub'|t }}</a>
+        <a href="/demo" class="btn-primary">{{ 'Try the live demo'|t }}</a>
+        <a href="/getting-started" class="btn-outline">{{ 'Get started free'|t }}</a>
       </div>
     </div>
   </section>
@@ -54,28 +55,33 @@
       <div class="audience-grid">
 
         <div class="audience-card">
-          <div class="audience-label">{{ 'For small businesses'|t }}</div>
-          <h2>{{ 'Add AI to your business — no technical knowledge needed'|t }}</h2>
-          <p>{{ 'Talovi gives your website an intelligent assistant that understands your industry. Whether you run a medical practice, law office, real estate agency, or retail store — Talovi speaks your language.'|t }}</p>
+          <div class="audience-label">{{ 'For business owners'|t }}</div>
+          <h2>{{ 'You don\'t need a developer to add AI to your business.'|t }}</h2>
+          <p>{{ 'Talovi works right in your browser. Choose your industry, enter your API key, and your AI assistant is ready — no installation, no coding, no technical knowledge required.'|t }}</p>
+          <p class="audience-subline">{{ 'Works for: Medical practices, law offices, real estate agencies, retail stores, and more.'|t }}</p>
           <ul class="benefit-list">
             <li>{{ 'Answer customer questions 24/7'|t }}</li>
             <li>{{ 'Handle appointment requests and inquiries'|t }}</li>
             <li>{{ 'Guide visitors to the right service'|t }}</li>
             <li>{{ 'Works on any website'|t }}</li>
+            <li>{{ 'No coding or technical knowledge required'|t }}</li>
+            <li>{{ 'Available in English, Spanish, French, Portuguese, and Chinese — with automatic language detection'|t }}</li>
           </ul>
-          <a href="/demo" class="btn-primary">{{ 'Try a live demo'|t }}</a>
+          <a href="/demo" class="btn-primary">{{ 'Try a live demo — no signup required'|t }}</a>
         </div>
 
         <div class="audience-card">
           <div class="audience-label">{{ 'For developers'|t }}</div>
-          <h2>{{ 'Build AI-powered apps in minutes — not months'|t }}</h2>
-          <p>{{ 'Talovi is an open source framework that handles the hard parts — provider switching, agent routing, conversation memory, and model tier management. You focus on your product.'|t }}</p>
+          <h2>{{ 'Build AI-powered apps in minutes, not months.'|t }}</h2>
+          <p>{{ 'Talovi handles provider switching, agent routing, conversation memory, and cost tracking. You focus on your product.'|t }}</p>
           <ul class="benefit-list">
-            <li>{{ 'Works with Claude, Gemini, Grok, and Ollama'|t }}</li>
+            <li>{{ 'Works with Claude, ChatGPT, Gemini, Grok, and Ollama'|t }}</li>
             <li>{{ '5 domain agents ready to deploy'|t }}</li>
             <li>{{ 'Switch AI providers in one line'|t }}</li>
+            <li>{{ 'Built-in cost tracking across all providers'|t }}</li>
             <li>{{ 'MIT licensed, free forever'|t }}</li>
           </ul>
+          <pre class="npm-install"><code>npm install talovi</code></pre>
           <a href="/docs" class="btn-outline">{{ 'Read the docs'|t }}</a>
         </div>
 

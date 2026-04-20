@@ -57,7 +57,7 @@ body.toolbar-fixed.toolbar-tray-open .talovi-header {
 
 .talovi-logo-text {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.4rem;
+  font-size: 32px;
   font-weight: 700;
   color: #e6edf3;
   letter-spacing: -0.02em;
@@ -104,6 +104,14 @@ nav.talovi-nav ul li a.active,
 nav.talovi-nav ul li a.is-active {
   color: #534AB7;
   background-color: rgba(83, 74, 183, 0.12);
+}
+
+/* "Cloud" nav link — subtle purple accent */
+nav.talovi-nav ul li a.nav-cloud {
+  color: #6C63FF;
+}
+nav.talovi-nav ul li a.nav-cloud:hover {
+  color: #8b84ff;
 }
 
 /* "Get started" button — last list item */

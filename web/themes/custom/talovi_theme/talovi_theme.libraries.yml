@@ -12,6 +12,7 @@ global:
       css/components/navigation.css: {}
       css/components/footer.css: {}
       css/components/buttons.css: {}
+      css/components/demo.css: {}
   js:
     js/talovi.js: {}
   dependencies:

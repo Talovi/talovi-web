@@ -1,0 +1,14 @@
+/* Demo page chat widget — accessibility overrides for inline node-body styles */
+
+/* Override transparent background and missing border from node body inline CSS.
+   input.chat-input has higher specificity than the node's .chat-input rule. */
+input.chat-input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid #6e7681;
+  border-radius: 8px;
+}
+
+/* Explicit placeholder color — 6.1:1 contrast on dark background (WCAG AA). */
+input.chat-input::placeholder {
+  color: #8b949e;
+}

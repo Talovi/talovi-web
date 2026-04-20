@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override for article nodes (blog posts).
+ *
+ * Uses field_author for the byline when set; falls back to author_name
+ * (resolved in talovi_theme_preprocess_node).
+ */
+#}
+<article{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% set byline_author = node.field_author.value ?: author_name %}
+  {% if byline_author %}
+    <div class="node-byline">
+      <span class="node-byline-author">By {{ byline_author }}</span>
+      {% if date %}
+        <span class="node-byline-date"> · {{ date }}</span>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node-content') }}>
+    {{ content }}
+  </div>
+
+</article>
