@@ -284,6 +284,15 @@ nav.talovi-nav ul li a.btn-nav-primary:hover {
 }
 
 /* ============================================================
+   Page-specific title overrides
+   ============================================================ */
+
+/* Agents page: title is redundant — body already has "Meet the Agents" */
+body.node-agents .page-title-bar {
+  display: none;
+}
+
+/* ============================================================
    Interior page title bar
    ============================================================ */
 

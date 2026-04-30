@@ -14,6 +14,12 @@ function talovi_theme_preprocess_html(&$variables) {
 
   // Add theme version as a data attribute.
   $variables['attributes']['data-theme-version'] = '1.0.0';
+
+  // Tag the Agents page so we can suppress the redundant node title via CSS.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface && $node->id() == 10) {
+    $variables['attributes']['class'][] = 'node-agents';
+  }
 }
 
 /**
