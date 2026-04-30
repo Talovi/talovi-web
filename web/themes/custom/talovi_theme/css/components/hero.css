@@ -10,18 +10,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 64px;
+  /* 36px announce bar + 64px fixed header */
+  padding-top: calc(var(--announce-height, 36px) + 64px);
   text-align: center;
   /* No overflow: hidden — it clips the glow and can hide content */
 }
 
 /* Toolbar-aware padding — header shifts down when admin toolbar is present */
 body.toolbar-fixed .talovi-hero {
-  padding-top: 103px; /* 39px toolbar + 64px header */
+  padding-top: calc(var(--announce-height, 36px) + 103px); /* 39px toolbar + 64px header */
 }
 
 body.toolbar-fixed.toolbar-tray-open .talovi-hero {
-  padding-top: 143px; /* 79px toolbar+tray + 64px header */
+  padding-top: calc(var(--announce-height, 36px) + 143px); /* 79px toolbar+tray + 64px header */
 }
 
 /* Purple glow */
@@ -101,7 +102,7 @@ body.toolbar-fixed.toolbar-tray-open .talovi-hero {
 
 @media (max-width: 767px) {
   .talovi-hero {
-    padding-top: 80px;
+    padding-top: calc(var(--announce-height, 36px) + 64px);
   }
 
   .hero-inner h2 {

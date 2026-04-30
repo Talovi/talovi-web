@@ -2,9 +2,115 @@
    Talovi Theme — Header
    ========================================================================== */
 
-.talovi-header {
+/* ============================================================
+   Announcement bar
+   ============================================================ */
+
+:root {
+  --announce-height: 36px;
+}
+
+.talovi-announce {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 202;
+  height: var(--announce-height);
+  background: #0d1117;
+  border-bottom: 1px solid #1e4a4a;
+}
+
+.talovi-announce-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.talovi-announce-badge {
+  flex-shrink: 0;
+  background: #e8720c;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.talovi-announce-text {
+  font-size: 0.8rem;
+  color: #c9d1d9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.talovi-announce-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.talovi-announce-learn {
+  font-size: 0.8rem;
+  color: #8b949e;
+  text-decoration: none;
+}
+
+.talovi-announce-learn:hover {
+  color: #e6edf3;
+}
+
+.talovi-announce-cta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: #0a9396;
+  padding: 4px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.talovi-announce-cta:hover {
+  background: #0b8285;
+  color: #fff;
+}
+
+.talovi-announce-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.talovi-announce-close:hover {
+  color: #e6edf3;
+}
+
+@media (max-width: 640px) {
+  .talovi-announce-actions { display: none; }
+  .talovi-announce-text { font-size: 0.75rem; }
+}
+
+/* ============================================================
+   Main nav header — sits below the announce bar
+   ============================================================ */
+
+.talovi-header {
+  position: fixed;
+  top: var(--announce-height);
   left: 0;
   right: 0;
   z-index: 201;
@@ -15,7 +121,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  margin-top: 1rem;
   transition: background-color 250ms ease, box-shadow 250ms ease;
 }
 
@@ -28,11 +133,11 @@
 
 /* Drupal toolbar offsets — toolbar is 39px, tray adds another 40px */
 body.toolbar-fixed .talovi-header {
-  top: 39px;
+  top: calc(var(--announce-height, 36px) + 39px);
 }
 
 body.toolbar-fixed.toolbar-tray-open .talovi-header {
-  top: 79px;
+  top: calc(var(--announce-height, 36px) + 79px);
 }
 
 /* ============================================================
@@ -183,19 +288,19 @@ nav.talovi-nav ul li a.btn-nav-primary:hover {
    ============================================================ */
 
 .page-title-bar {
-  /* top padding must clear the fixed 64px header */
-  padding: calc(var(--header-height, 64px) + 1rem) 2rem 1.5rem;
+  /* top padding must clear the announce bar (36px) + fixed 64px header */
+  padding: calc(var(--announce-height, 36px) + var(--header-height, 64px) + 1rem) 2rem 1.5rem;
   border-bottom: 1px solid #30363d;
   background: #0d1117;
 }
 
 /* Shift down further when the Drupal admin toolbar is present */
 body.toolbar-fixed .page-title-bar {
-  padding-top: calc(39px + var(--header-height, 64px) + 1rem);
+  padding-top: calc(var(--announce-height, 36px) + 39px + var(--header-height, 64px) + 1rem);
 }
 
 body.toolbar-fixed.toolbar-tray-open .page-title-bar {
-  padding-top: calc(79px + var(--header-height, 64px) + 1rem);
+  padding-top: calc(var(--announce-height, 36px) + 79px + var(--header-height, 64px) + 1rem);
 }
 
 .page-title-bar .container {
@@ -224,7 +329,7 @@ body.toolbar-fixed.toolbar-tray-open .page-title-bar {
     align-items: stretch;
     gap: 0;
     position: fixed;
-    top: 64px;
+    top: calc(var(--announce-height, 36px) + 64px);
     left: 0;
     right: 0;
     background: #161b22;

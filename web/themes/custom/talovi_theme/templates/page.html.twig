@@ -8,6 +8,18 @@
 #}
 <div class="layout-container">
 
+  <div class="talovi-announce" id="talovi-announce" role="banner" aria-label="{{ 'Announcement'|t }}">
+    <div class="talovi-announce-inner">
+      <span class="talovi-announce-badge">{{ 'NEW'|t }}</span>
+      <span class="talovi-announce-text">{{ 'Introducing Talovi™ — open source AI framework for small businesses, built by IT Lasso'|t }}</span>
+      <div class="talovi-announce-actions">
+        <a href="/about" class="talovi-announce-learn">{{ 'Learn more'|t }}</a>
+        <a href="/demo" class="talovi-announce-cta">{{ 'Try the demo →'|t }}</a>
+      </div>
+      <button class="talovi-announce-close" aria-label="{{ 'Dismiss announcement'|t }}" onclick="this.closest('.talovi-announce').style.display='none';document.documentElement.style.setProperty('--announce-height','0px');localStorage.setItem('talovi_announce_dismissed','1')">×</button>
+    </div>
+  </div>
+
   <header class="talovi-header" role="banner">
     <a class="talovi-logo" href="{{ path('<front>') }}" rel="home">
       <img class="talovi-logo-icon" src="/themes/custom/talovi_theme/images/talovi-logo-icon.png" srcset="/themes/custom/talovi_theme/images/talovi-logo-icon-2x.png 2x" width="32" height="32" alt="Talovi">
@@ -201,6 +213,15 @@
   </footer>
 
 </div>{# /.layout-container #}
+
+<script>
+(function(){
+  if(localStorage.getItem('talovi_announce_dismissed')==='1'){
+    var el=document.getElementById('talovi-announce');
+    if(el){el.style.display='none';document.documentElement.style.setProperty('--announce-height','0px');}
+  }
+})();
+</script>
 
 {% if is_demo %}
 {#
