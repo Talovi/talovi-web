@@ -172,7 +172,9 @@
       {% endif %}
     </div>
   </div>
+  {% endif %}
 
+  {% if not is_front %}
   <main id="main-content" class="main-content" role="main">
     <div class="container">
       {{ page.content }}
