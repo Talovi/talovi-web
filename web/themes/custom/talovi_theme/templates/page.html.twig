@@ -162,7 +162,7 @@
   </section>
   {% endif %}
 
-  {% if not is_front %}
+  {% if not is_front and not (node and node.id() == 10) %}
   <div class="page-title-bar">
     <div class="container">
       {% if node %}
