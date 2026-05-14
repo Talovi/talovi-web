@@ -1,0 +1,23 @@
+.cloud-explainer { max-width: 860px; margin: 0 auto; padding: 2rem 0; }
+.cloud-intro p { font-size: 1.1rem; line-height: 1.8; color: #e6edf3; margin-bottom: 1.5rem; }
+.cloud-compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2.5rem; }
+.cloud-compare-table th { background: #534AB7; color: #fff; padding: 0.75rem 1rem; text-align: left; }
+.cloud-compare-table td { padding: 0.65rem 1rem; border-bottom: 1px solid #21262d; color: #e6edf3; }
+.cloud-compare-table tr:nth-child(even) td { background: #161b22; }
+.cloud-three { display: flex; flex-direction: column; gap: 1.5rem; margin: 1.5rem 0 2.5rem; }
+.cloud-step { display: flex; align-items: flex-start; gap: 1rem; }
+.cloud-step-num { background: #534AB7; color: #fff; font-weight: bold; font-size: 1rem; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.cloud-step strong { color: #5DCAA5; }
+.cloud-step div { color: #e6edf3; line-height: 1.7; }
+.cloud-cta-block { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; }
+.cloud-cta-block .btn-primary { background: #534AB7; color: #fff; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
+.cloud-cta-block .btn-outline { border: 2px solid #534AB7; color: #534AB7; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold; }
+.cloud-cta-block .btn-primary:hover { background: #4339a0; }
+.cloud-cta-block .btn-outline:hover { background: #534AB7; color: #fff; }
+
+.cloud-explainer h2 {
+  color: #e6edf3;
+  font-size: 1.5rem;
+  margin: 2.5rem 0 0.75rem;
+  font-weight: 600;
+}

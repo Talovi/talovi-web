@@ -13,6 +13,7 @@ global:
       css/components/footer.css: {}
       css/components/buttons.css: {}
       css/components/demo.css: {}
+      css/components/cloud.css: {}
   js:
     js/talovi.js: {}
   dependencies:
